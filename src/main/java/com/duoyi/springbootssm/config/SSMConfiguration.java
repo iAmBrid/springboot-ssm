@@ -14,7 +14,7 @@ import java.beans.PropertyVetoException;
 import java.io.IOException;
 
 @Configuration
-@MapperScan("com.duoyi.springbootssm.mapper")
+@MapperScan("com.duoyi.springbootssm.dao")
 public class SSMConfiguration {
 
     @Autowired

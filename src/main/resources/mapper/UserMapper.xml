@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.duoyi.springbootssm.dao.UserDao">
+
+    <select id="searchAllUser" resultType="com.duoyi.springbootssm.domain.User">
+        select * from user
+    </select>
+
+    <select id="searchUserById" resultType="com.duoyi.springbootssm.domain.User">
+        select * from user where id=#{id}
+    </select>
+
+    <insert id="addUser" useGeneratedKeys="true" keyProperty="id" keyColumn="id"
+            parameterType="com.duoyi.springbootssm.domain.User">
+        insert into user value(#{id},#{username},#{password})
+    </insert>
+
+    <update id="updateUser" parameterType="com.duoyi.springbootssm.domain.User">
+        update user set username=#{username},password=#{password} where id=#{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="com.duoyi.springbootssm.domain.User">
+        delete from user where username=#{username} and password=#{password}
+    </delete>
+
+</mapper>

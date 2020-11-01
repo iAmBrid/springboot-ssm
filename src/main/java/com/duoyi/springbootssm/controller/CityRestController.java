@@ -1,7 +1,7 @@
 package com.duoyi.springbootssm.controller;
 
+import com.duoyi.springbootssm.dao.CityDao;
 import com.duoyi.springbootssm.domain.City;
-import com.duoyi.springbootssm.mapper.CityMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class CityRestController {
 
     @Autowired
-    private CityMapper cityMapper;
+    private CityDao cityMapper;
 
-    public CityRestController(CityMapper cityMapper) {
+    public CityRestController(CityDao cityMapper) {
         this.cityMapper = cityMapper;
     }
 
